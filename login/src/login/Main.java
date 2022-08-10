@@ -10,7 +10,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		
+	System.out.println("로그인을 시작하지");
 		String id = null;
 		String pw = null;
 		
