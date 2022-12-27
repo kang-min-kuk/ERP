@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mit.c301.DAO.ErpDAO">
+
+
+
+<!--  1.제품 등록 쿼리 -->
+	<insert id="selectinsert">
+		insert into erp(code,name,firstcost,targetcount,stock,factoryprice,groupcode)
+		values(#{code},#{name},#{firstcost},#{targetcount},#{stock},#{factoryprice},#{groupcode})
+	</insert>
+	
+	
+
+<!-- 	 2.제품 삭제 쿼리  -->
+	<delete id="selectdelete">
+		delete from erp where code=#{code}
+	</delete>
+	
+<!-- 제품조회 -->
+	<select id="selectsearch" resultType="com.mit.c301.vo.ErpVO">
+		select * from erp where code=#{code}
+	</select>
+
+
+
+
+<!-- 	<select id="reviewRead" resultType="edu.mit.c301.vo.ReviewVOAddName">
+		select * from review join store 
+	 	on review.restaurant_no=store.no
+	</select>
+
+	<select id="rate" resultType="edu.mit.c301.vo.RateVO">
+		select name, a_rate
+		from(select restaurant_no, avg(rate) a_rate
+		from review group by restaurant_no) t1
+		join store on t1.restaurant_no=store.no
+	</select>
+		
+	
+	<insert id="restauranInsert">
+		insert into store(name,address,tell)
+		values(#{name},#{address},#{tell});
+	</insert>
+	
+	
+	<select id="login" resultType="edu.mit.c301.vo.UserVO">
+		select * from signup where ID=#{ID} and PW=#{PW};
+	</select> -->
+  
+
+<!-- 	select * from review; -->
+<!-- 	insert into review(content,rate,restaurant_no,Signup_id) -->
+<!-- 	values('맛이 변했어요',3.5,1,'test1'); -->
+	
+<!-- 	 3.리뷰확인 (리뷰목록확인: no/리뷰내용/별점/작성자id) -->
+<!-- 	select * from review natural join store;  이거는 쓰면안됨 -->
+<!-- 	 (natural join 은 컬럼의 동일이 이름이 유일하게 하나일때만 정상동작) -->
+<!-- 	 select name,rate -->
+<!-- 	from(select store_no, avg(rate) rate from review group by store) t1 -->
+<!-- 	join store on t1.restaurant_no=store.no; -->
+	
+<!-- 	select * from review join store on review.restaurant_no=store.no; -->
+	
+<!-- 	 select * from review join store -->
+<!-- 	on review.restaurant_no=store.no; -->
+<!-- 	4.전체 평점 확인 (음식점 이름별 평균평점) -->
+<!-- 	select * from content; -->
+	
+<!-- 	select name, a_rate -->
+<!-- 	from(select restaurant_no, avg(rate) a_rate -->
+<!-- 	from review group by restaurant_no) t1 -->
+<!-- 	join store on t1.restaurant_no=store.no; -->
+<!-- 	5.음식점 등록 -->
+<!-- 	select * from store; -->
+	
+<!-- 	insert into store(name,adress,tell) -->
+<!-- 	values('맥도날드','망포','100-1000'); -->
+	
+	
+<!-- 	 6.회원 인증 -->
+<!-- 	select * from signup where id='test1' and pw=1234; -->
+	
+<!-- 	7. id 확인 쿼리 -->
+<!-- 	select * from signup where id='test1'; -->
+
+</mapper>
